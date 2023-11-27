@@ -3,17 +3,17 @@ import Button from '@mui/material/Button';
 type ButtonProps = {
     label: string
     variant?: 'text' | 'contained' | 'outlined'
-    backgroundColor?: string
+    color?: 'primary' | 'secondary'
 }
 
 export const TextButton = ({
   label, 
   variant, 
-  backgroundColor}: 
+  color}: 
   ButtonProps) => {
   return (
     <>
-        <Button variant={variant}>{label}</Button>
+        <Button variant={variant} color={color}>{label}</Button>
     </>
   )
 }
