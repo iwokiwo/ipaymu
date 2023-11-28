@@ -8,12 +8,14 @@ import { IconArrowDownRight, IconCurrencyDollar, IconArrowUpRight } from '@table
 import DashboardCard from '@/app/(DashboardLayout)/components/shared/DashboardCard';
 import { colors } from "@/asset";
 import {ModalConfirmProps} from "@/app/(DashboardLayout)/components/shared/modal-confirm/modal-confirm.props";
+import {isEmpty} from "lodash";
 
 
 interface IMonthlySummary {
     title: string,
     amount: string,
-    percentage : string
+    percentage? : string
+    trx?: string
 }
 
 const MonthlySummary = (props: IMonthlySummary)  => {
@@ -23,7 +25,7 @@ const MonthlySummary = (props: IMonthlySummary)  => {
   // const secondary = theme.palette.secondary.main;
   const secondarylight = colors.text.primary;
   const errorlight = '#fdede8';
-  const {title, percentage,amount} = props
+  const {title, percentage,amount, trx} = props
 
   // chart
   const optionscolumnchart: any = {
@@ -68,10 +70,11 @@ const MonthlySummary = (props: IMonthlySummary)  => {
     <DashboardCard
       title={title}
       action={
-        // <Fab color="secondary" size="medium" sx={{ color: '#ffffff' }}>
+        // <Fab color="primary" size="medium" sx={{ color: '#ffffff' }}>
         //   <IconCurrencyDollar width={24} />
         // </Fab>
-        <>x</>
+        // <>x</>
+        <></>
       }
       footer={
         <>
@@ -83,36 +86,45 @@ const MonthlySummary = (props: IMonthlySummary)  => {
                     display: 'flex',
                     flexWrap: 'wrap',
                     alignContent: 'flex-start',
-                    m: 1,
+                    mb: 1,
                  
-                    // bgcolor: 'background.paper',
+                    //bgcolor: theme.palette.primary.main,
                     // maxWidth: 380,
                     // height: 200,
                     borderRadius: 1,
                   }}
                 >
-                  <Box >
-
-                      <IconArrowUpRight width={20} color={colors.success.primary} />
-
-                  </Box>
-                  <Box sx={{ml: 1}}>
-                    <Typography color={colors.success.primary} variant="subtitle2" fontWeight="600">
-                      {percentage}
-                    </Typography>
-                  </Box>
-                  <Box sx={{ml: 1}}>
-                    <Typography variant="subtitle2" color="textSecondary">
-                      vs last month
-                    </Typography>
-                  </Box>
-
+                  {isEmpty(trx) ?
+                    <>
+                      <Box >
+                        <IconArrowUpRight width={20} color={colors.success.primary} />
+                      </Box>
+                      <Box sx={{ml: 1}}>
+                        <Typography color={colors.success.primary} variant="subtitle2" fontWeight="600">
+                          {percentage}
+                        </Typography>
+                      </Box>
+                      <Box sx={{ml: 1}}>
+                        <Typography variant="subtitle2" color="textSecondary">
+                          vs last month
+                        </Typography>
+                      </Box>
+                    </>
+                    :
+                    <>
+                      <Box sx={{ml: 1}}>
+                        <Typography color={colors.success.primary} variant="subtitle2" fontWeight="600">
+                          {trx}
+                        </Typography>
+                      </Box>
+                    </>
+                  }
                 </Box>
 
               </Grid>
-              <Grid item xs={4}>
-                <Chart options={optionscolumnchart} series={seriescolumnchart} type="area" height="60px" />
-              </Grid>
+              {/*<Grid item xs={4}>*/}
+              {/*  <Chart options={optionscolumnchart} series={seriescolumnchart} type="area" height="60px" />*/}
+              {/*</Grid>*/}
 
             </Grid>
         

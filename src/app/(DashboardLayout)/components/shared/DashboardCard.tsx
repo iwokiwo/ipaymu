@@ -28,7 +28,7 @@ const DashboardCard = ({
     <Card sx={{ padding: 0 }} elevation={9} variant={undefined}>
       {cardheading ? (
         <CardContent>
-          <Typography variant="h5">{headtitle}</Typography>
+          <Typography variant="h6">{headtitle}</Typography>
           <Typography variant="subtitle2" color="textSecondary">
             {headsubtitle}
           </Typography>
