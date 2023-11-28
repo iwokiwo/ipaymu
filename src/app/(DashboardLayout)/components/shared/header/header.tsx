@@ -24,7 +24,7 @@ const Header = ({title, menu =false, children }: Props) => {
         <Grid item xs={12} sm={6} md={6}>
             <Stack spacing={2} direction="row" sx={{mb: 0}}>
                 <Typography
-                    variant="h3"
+                    variant="h4"
                     // sx={{
                     //     background: "linear-gradient(45deg, #ffffff , #C83333 90%)",
                     //     backgroundClip: "text",

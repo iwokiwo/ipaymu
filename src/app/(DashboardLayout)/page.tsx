@@ -24,7 +24,7 @@ const Dashboard = () => {
             <Box sx={{ flexGrow: 1 }}>
               <Box sx={{pt : 2, pb: 2}}>
                  <URBS.Header
-                     title="Dashboard"
+                     title="Statistik Transaksi Berdasarkan Status"
                  >
                    <Button variant="outlined" className={classes.button}><Typography>Custome Date</Typography></Button>
                    <Button variant="outlined" className={classes.button}><Typography>Custome Date</Typography></Button>
