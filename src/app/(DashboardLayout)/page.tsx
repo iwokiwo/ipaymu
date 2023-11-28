@@ -1,13 +1,12 @@
 'use client'
 import {
-  Grid,
-  Box,
-  Typography,
-  Button,
-  Stack,
-  BottomNavigation,
-  BottomNavigationAction,
-  Autocomplete, TextField
+    Grid,
+    Box,
+    Typography,
+    Stack,
+    BottomNavigation,
+    BottomNavigationAction,
+    Autocomplete, TextField, Button
 } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
@@ -51,7 +50,12 @@ const Dashboard = () => {
                      sx={{ width: 300 }}
                      renderInput={(params) => <TextField {...params} label="Type" />}
                    />
-                   <Button variant="outlined" className={classes.button}><Typography>Custome Date</Typography></Button>
+                   <IPY.Button
+                       variant="outlined"
+                       className={classes.button!}
+                       text={<Typography>Custome Date</Typography>}
+                       onClick={() => {alert("tes")}}
+                   />
                  </IPY.Header>
               </Box>
                 <Grid item xs={12} lg={12}>

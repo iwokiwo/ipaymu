@@ -1,10 +1,10 @@
-import TextButton from "./Text.Button"
+import IPY from './component';
 import type { Meta, StoryObj } from '@storybook/react';
 
 
-const meta: Meta<typeof TextButton> = {
-    title: "Components/Atom/Button",
-    component: TextButton,
+const meta: Meta<typeof IPY.Button> = {
+    title: "Components/Button",
+    component: IPY.Button,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'centered',
@@ -18,17 +18,11 @@ const meta: Meta<typeof TextButton> = {
   };
   
   export default meta;
-  type Story = StoryObj<typeof TextButton>;
+  type Story = StoryObj<typeof IPY.Button>;
   
-  export const Primary: Story = {
+  export const Button: Story = {
     args: {
-      variant: 'text',
-      label: 'submit'
-    },
-  };
-  export const Secondary: Story = {
-    args: {
-      variant: 'text',
-      label: 'submit'
+      variant: 'contained',
+      text: 'submit'
     },
   };
