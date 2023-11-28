@@ -4,11 +4,11 @@ import IPY from './component';
 
 
 const meta: Meta<typeof IPY.DashboardCard> = {
-    title: "Components/Card",
+    title: "Components/Atom/Card",
     component: IPY.DashboardCard,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
-        layout: 'fullscreen',
+        layout: 'center',
       },
       // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
       tags: ['autodocs'],

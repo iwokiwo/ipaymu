@@ -13,7 +13,7 @@ import {Add, DeleteOutline, FormatListBulleted, Notifications} from "@mui/icons-
 type Props = {
     title?: string;
     menu?: boolean;
-    children: JSX.Element | JSX.Element[];
+    children?: JSX.Element | JSX.Element[];
 };
 
 const Header = ({title, menu =false, children }: Props) => {

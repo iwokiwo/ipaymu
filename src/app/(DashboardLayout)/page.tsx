@@ -1,5 +1,14 @@
 'use client'
-import { Grid, Box, Typography, Button, Stack, BottomNavigation, BottomNavigationAction } from '@mui/material';
+import {
+  Grid,
+  Box,
+  Typography,
+  Button,
+  Stack,
+  BottomNavigation,
+  BottomNavigationAction,
+  Autocomplete, TextField
+} from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 import PageContainer from '@/app/(DashboardLayout)/components/container/PageContainer';
@@ -15,11 +24,19 @@ import React from 'react';
 import {useStyles} from "@/app/(DashboardLayout)/components/dashboard/dasboard.styles";
 import Header from "@/app/(DashboardLayout)/layout/header/Header";
 
+
 import { colors } from "@/asset";
+
 
 const Dashboard = () => {
     const matches = useMediaQuery('(min-width:600px)');
     const classes = useStyles()
+
+  const top100Films = [
+    { label: 'The Shawshank Redemption', year: 1994 },
+    { label: 'The Godfather', year: 1972 },
+    { label: 'The Godfather: Part II', year: 1974 },
+    ]
     return (
         <PageContainer title="Dashboard" description="this is Dashboard">
             <Box sx={{ flexGrow: 1 }}>
@@ -27,8 +44,13 @@ const Dashboard = () => {
                  <IPY.Header
                      title="Statistik Transaksi Berdasarkan Status"
                  >
-                   <Button variant="outlined" className={classes.button}><Typography>Custome Date</Typography></Button>
-                   <Button variant="outlined" className={classes.button}><Typography>Custome Date</Typography></Button>
+                   <Autocomplete
+                     disablePortal
+                     id="combo-box-demo"
+                     options={top100Films}
+                     sx={{ width: 300 }}
+                     renderInput={(params) => <TextField {...params} label="Type" />}
+                   />
                    <Button variant="outlined" className={classes.button}><Typography>Custome Date</Typography></Button>
                  </IPY.Header>
               </Box>

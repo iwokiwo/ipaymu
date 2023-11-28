@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 
 const meta: Meta<typeof TextButton> = {
-    title: "Components/Button",
+    title: "Components/Atom/Button",
     component: TextButton,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout

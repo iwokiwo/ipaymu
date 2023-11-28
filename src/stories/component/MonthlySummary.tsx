@@ -5,17 +5,17 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import { useTheme } from '@mui/material/styles';
 import { Stack, Typography, Avatar, Fab, Grid, Box } from '@mui/material';
 import { IconArrowDownRight, IconCurrencyDollar, IconArrowUpRight } from '@tabler/icons-react';
-import { colors } from "@/asset";
+import { colors } from "../../asset";
 import {isEmpty} from "lodash";
 
-import IPY from '@/app/(DashboardLayout)/components/index'
+import DashboardCard from "../../app/(DashboardLayout)/components/shared/DashboardCard";
 
 interface IMonthlySummary {
-    title: string,
-    amount: string,
-    percentage? : string
-    trx?: string
-    backgroundColor?: string
+  title: string,
+  amount: string,
+  percentage? : string
+  trx?: string
+  backgroundColor?: string
 }
 
 const MonthlySummary = (props: IMonthlySummary)  => {
@@ -67,7 +67,7 @@ const MonthlySummary = (props: IMonthlySummary)  => {
   ];
 
   return (
-    <IPY.DashboardCard
+    <DashboardCard
       title={title}
       action={
         // <Fab color="primary" size="medium" sx={{ color: '#ffffff' }}>
@@ -79,56 +79,56 @@ const MonthlySummary = (props: IMonthlySummary)  => {
       backgroundColor={backgroundColor!}
       footer={
         <>
-        
-            <Grid container spacing={1}>
-              <Grid item xs={8}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    alignContent: 'flex-start',
-                    mb: 1,
-                 
-                    //bgcolor: theme.palette.primary.main,
-                    // maxWidth: 380,
-                    // height: 200,
-                    borderRadius: 1,
-                  }}
-                >
-                  {isEmpty(trx) ?
-                    <>
-                      <Box >
-                        <IconArrowUpRight width={20} color={colors.success.primary} />
-                      </Box>
-                      <Box sx={{ml: 1}}>
-                        <Typography color={colors.success.primary} variant="subtitle2" fontWeight="600">
-                          {percentage}
-                        </Typography>
-                      </Box>
-                      <Box sx={{ml: 1}}>
-                        <Typography variant="subtitle2" color="textSecondary">
-                          vs last month
-                        </Typography>
-                      </Box>
-                    </>
-                    :
-                    <>
-                      <Box sx={{ml: 1}}>
-                        <Typography color={isEmpty(backgroundColor) ? colors.success.primary:"#ffff"} variant="subtitle2" fontWeight="600">
-                          {trx}
-                        </Typography>
-                      </Box>
-                    </>
-                  }
-                </Box>
 
-              </Grid>
-              {/*<Grid item xs={4}>*/}
-              {/*  <Chart options={optionscolumnchart} series={seriescolumnchart} type="area" height="60px" />*/}
-              {/*</Grid>*/}
+          <Grid container spacing={1}>
+            <Grid item xs={8}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignContent: 'flex-start',
+                  mb: 1,
+
+                  //bgcolor: theme.palette.primary.main,
+                  // maxWidth: 380,
+                  // height: 200,
+                  borderRadius: 1,
+                }}
+              >
+                {isEmpty(trx) ?
+                  <>
+                    <Box >
+                      <IconArrowUpRight width={20} color={colors.success.primary} />
+                    </Box>
+                    <Box sx={{ml: 1}}>
+                      <Typography color={colors.success.primary} variant="subtitle2" fontWeight="600">
+                        {percentage}
+                      </Typography>
+                    </Box>
+                    <Box sx={{ml: 1}}>
+                      <Typography variant="subtitle2" color="textSecondary">
+                        vs last month
+                      </Typography>
+                    </Box>
+                  </>
+                  :
+                  <>
+                    <Box sx={{ml: 1}}>
+                      <Typography color={isEmpty(backgroundColor) ? colors.success.primary:"#ffff"} variant="subtitle2" fontWeight="600">
+                        {trx}
+                      </Typography>
+                    </Box>
+                  </>
+                }
+              </Box>
 
             </Grid>
-        
+            {/*<Grid item xs={4}>*/}
+            {/*  <Chart options={optionscolumnchart} series={seriescolumnchart} type="area" height="60px" />*/}
+            {/*</Grid>*/}
+
+          </Grid>
+
 
 
         </>
@@ -150,7 +150,7 @@ const MonthlySummary = (props: IMonthlySummary)  => {
           </Typography>
         </Stack> */}
       </>
-    </IPY.DashboardCard>
+    </DashboardCard>
   );
 };
 
