@@ -9,6 +9,9 @@
 import React from "react";
 import { Card, CardContent, Typography, Stack, Box } from "@mui/material";
 
+import { colors } from "@/asset";
+import {isEmpty} from "lodash";
+
 type Props = {
   title?: string;
   subtitle?: string;
@@ -19,6 +22,7 @@ type Props = {
   headsubtitle?: string | JSX.Element;
   children?: JSX.Element;
   middlecontent?: string | JSX.Element;
+  backgroundColor?: string
 };
 
 const DashboardCard = ({
@@ -30,19 +34,19 @@ const DashboardCard = ({
   cardheading,
   headtitle,
   headsubtitle,
-  middlecontent,
+  middlecontent, backgroundColor
 }: Props) => {
   return (
-      <Card sx={{ padding: 0 }} elevation={9} variant={undefined}>
+      <Card sx={{ padding: 0, backgroundColor: backgroundColor }} elevation={9}>
       {cardheading ? (
         <CardContent>
-          <Typography variant="h5">{headtitle}</Typography>
-          <Typography variant="subtitle2" color="textSecondary">
+          <Typography variant="h6">{headtitle}</Typography>
+          <Typography variant="subtitle2" color={isEmpty(backgroundColor) ? "textSecondary":"#ffff"}>
             {headsubtitle}
           </Typography>
         </CardContent>
       ) : (
-        <CardContent sx={{ p: "30px" }}>
+        <CardContent sx={{ p: "10px" }}>
           {title ? (
             <Stack
               direction="row"
@@ -52,10 +56,10 @@ const DashboardCard = ({
               mb={3}
             >
               <Box>
-                {title ? <Typography variant="h5">{title}</Typography> : ""}
+                {title ? <Typography variant="subtitle2" color={isEmpty(backgroundColor) ? "textSecondary":"#ffff"}>{title}</Typography> : ""}
 
                 {subtitle ? (
-                  <Typography variant="subtitle2" color="textSecondary">
+                  <Typography variant="subtitle2" color={isEmpty(backgroundColor) ? "textSecondary":"#ffff"}>
                     {subtitle}
                   </Typography>
                 ) : (

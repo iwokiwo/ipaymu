@@ -13,8 +13,9 @@ import {TableItem} from "./shared/table/table-item";
 import Pagination from "@/app/(DashboardLayout)/components/shared/pagination/pagination";
 import HeaderMenu from "@/app/(DashboardLayout)/components/shared/header-menu/header-menu";
 import Header from "@/app/(DashboardLayout)/components/shared/header/header";
+import MonthlySummary from "@/app/(DashboardLayout)/components/dashboard/MonthlySummary";
 
-const URBS ={
+const IPY ={
     PageContainer,
     DashboardCard,
     CardHeader,
@@ -27,6 +28,7 @@ const URBS ={
     TableItem,
     Pagination,
     HeaderMenu,
-    Header
+    Header,
+    MonthlySummary
 }
-export default URBS;
+export default IPY;

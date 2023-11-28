@@ -10,11 +10,12 @@ import RecentTransactions from '@/app/(DashboardLayout)/components/dashboard/Rec
 import ProductPerformance from '@/app/(DashboardLayout)/components/dashboard/ProductPerformance';
 import Blog from '@/app/(DashboardLayout)/components/dashboard/Blog';
 import MonthlyEarnings from '@/app/(DashboardLayout)/components/dashboard/MonthlyEarnings';
-import MonthlySummary from "@/app/(DashboardLayout)/components/dashboard/MonthlySummary";
-import URBS from './components';
+import IPY from './components';
 import React from 'react';
 import {useStyles} from "@/app/(DashboardLayout)/components/dashboard/dasboard.styles";
 import Header from "@/app/(DashboardLayout)/layout/header/Header";
+
+import { colors } from "@/asset";
 
 const Dashboard = () => {
     const matches = useMediaQuery('(min-width:600px)');
@@ -23,27 +24,27 @@ const Dashboard = () => {
         <PageContainer title="Dashboard" description="this is Dashboard">
             <Box sx={{ flexGrow: 1 }}>
               <Box sx={{pt : 2, pb: 2}}>
-                 <URBS.Header
+                 <IPY.Header
                      title="Statistik Transaksi Berdasarkan Status"
                  >
                    <Button variant="outlined" className={classes.button}><Typography>Custome Date</Typography></Button>
                    <Button variant="outlined" className={classes.button}><Typography>Custome Date</Typography></Button>
                    <Button variant="outlined" className={classes.button}><Typography>Custome Date</Typography></Button>
-                 </URBS.Header>
+                 </IPY.Header>
               </Box>
                 <Grid item xs={12} lg={12}>
                     <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                         <Grid item xs={4} sm={4} md={3} >
-                            <MonthlySummary title="Transaksi Sukses" amount=" 50.000" trx="1000 Trx" />
+                            <IPY.MonthlySummary title="Transaksi Sukses" amount="Rp 10.000" trx="1000 Transaksi" backgroundColor={colors.success.primary} />
                         </Grid>
                         <Grid item xs={4} sm={4} md={3} >
-                            <MonthlySummary title="Transaksi Panding" amount="Rp 50.000" trx="200 Trx" />
+                            <IPY.MonthlySummary title="Transaksi Panding" amount="Rp 60.000" trx="200 Trx" backgroundColor={colors.secondary.main}/>
                         </Grid>
                         <Grid item xs={4} sm={4} md={3} >
-                            <MonthlySummary title="Transaksi Gagal" amount="Rp 50.000" trx="4000 Trx" />
+                            <IPY.MonthlySummary title="Transaksi Gagal" amount="Rp 90.000" trx="4000 Trx" backgroundColor={colors.error.primary}/>
                         </Grid>
                         <Grid item xs={4} sm={4} md={3} >
-                            <MonthlySummary title="Transaksi Unsettled" amount="Rp 50.000" trx="8000 Trx" />
+                            <IPY.MonthlySummary title="Transaksi Unsettled" amount="Rp 20.000" trx="8000 Trx" backgroundColor={colors.info.primary}/>
                         </Grid>
                     </Grid>
 

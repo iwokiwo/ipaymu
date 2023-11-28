@@ -5,17 +5,18 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import { useTheme } from '@mui/material/styles';
 import { Stack, Typography, Avatar, Fab, Grid, Box } from '@mui/material';
 import { IconArrowDownRight, IconCurrencyDollar, IconArrowUpRight } from '@tabler/icons-react';
-import DashboardCard from '@/app/(DashboardLayout)/components/shared/DashboardCard';
 import { colors } from "@/asset";
 import {ModalConfirmProps} from "@/app/(DashboardLayout)/components/shared/modal-confirm/modal-confirm.props";
 import {isEmpty} from "lodash";
 
+import IPY from '@/app/(DashboardLayout)/components/index'
 
 interface IMonthlySummary {
     title: string,
     amount: string,
     percentage? : string
     trx?: string
+    backgroundColor?: string
 }
 
 const MonthlySummary = (props: IMonthlySummary)  => {
@@ -25,7 +26,7 @@ const MonthlySummary = (props: IMonthlySummary)  => {
   // const secondary = theme.palette.secondary.main;
   const secondarylight = colors.text.primary;
   const errorlight = '#fdede8';
-  const {title, percentage,amount, trx} = props
+  const {title, percentage,amount, trx, backgroundColor} = props
 
   // chart
   const optionscolumnchart: any = {
@@ -67,7 +68,7 @@ const MonthlySummary = (props: IMonthlySummary)  => {
   ];
 
   return (
-    <DashboardCard
+    <IPY.DashboardCard
       title={title}
       action={
         // <Fab color="primary" size="medium" sx={{ color: '#ffffff' }}>
@@ -76,6 +77,7 @@ const MonthlySummary = (props: IMonthlySummary)  => {
         // <>x</>
         <></>
       }
+      backgroundColor={backgroundColor!}
       footer={
         <>
         
@@ -113,7 +115,7 @@ const MonthlySummary = (props: IMonthlySummary)  => {
                     :
                     <>
                       <Box sx={{ml: 1}}>
-                        <Typography color={colors.success.primary} variant="subtitle2" fontWeight="600">
+                        <Typography color={isEmpty(backgroundColor) ? colors.success.primary:"#ffff"} variant="subtitle2" fontWeight="600">
                           {trx}
                         </Typography>
                       </Box>
@@ -134,7 +136,7 @@ const MonthlySummary = (props: IMonthlySummary)  => {
       }
     >
       <>
-        <Typography variant="h3" fontWeight="700" mt="-20px">
+        <Typography variant="h3" fontWeight="700" mt="-20px" color={isEmpty(backgroundColor) ? "textSecondary":"#ffff"}>
           {amount}
         </Typography>
         {/* <Stack direction="row" spacing={1} my={1} alignItems="center">
@@ -149,7 +151,7 @@ const MonthlySummary = (props: IMonthlySummary)  => {
           </Typography>
         </Stack> */}
       </>
-    </DashboardCard>
+    </IPY.DashboardCard>
   );
 };
 
