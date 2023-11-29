@@ -1,3 +1,10 @@
+/**
+ * @author I Wayan Bayu Nugroho
+ * @email bayuiwo@gmail.com
+ * @create date 2023-05-09 23:12:33
+ * @modify date 2023-05-09 23:12:33
+ */
+
 'use client'
 import {
     Grid,
@@ -9,6 +16,9 @@ import {
     Autocomplete, TextField, Button
 } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
+import PieChartIcon from '@mui/icons-material/PieChart';
 
 import PageContainer from '@/app/(DashboardLayout)/components/container/PageContainer';
 // components
@@ -40,9 +50,45 @@ const Dashboard = () => {
         <PageContainer title="Dashboard" description="this is Dashboard">
             <Box sx={{ flexGrow: 1 }}>
               <Box sx={{pt : 2, pb: 2}}>
+                <Box sx={{mb: 2}}>
+                <IPY.Header
+                  title="Dashboard"
+                />
+                </Box>
+                <Grid item xs={12} lg={12}>
+                  <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12}}>
+                    <Grid item xs={4}>
+                      <IPY.DailySummary
+                        title="Transaksi Hari Ini"
+                        amount="Rp. 1.000.000.000"
+                        trx="1000 Transaksi"
+                        icon={<SignalCellularAltIcon sx={{ fontSize: 70 }}/>} />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <IPY.DailySummary
+                        title="GTV Hari Ini"
+                        amount="Rp. 1.000.000.000"
+                        trx="1000 Transaksi"
+                        icon={<ShoppingCartIcon  sx={{ fontSize: 70 }}/>} />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <IPY.DailySummary
+                        title="Top Channel Pembayaran"
+                        amount="Split Payment"
+                        trx="1000 Transaksi"
+                        icon={<PieChartIcon  sx={{ fontSize: 70 }}  /> } />
+                    </Grid>
+
+                  </Grid>
+
+                </Grid>
+              </Box>
+
+              <Box sx={{pt : 2, pb: 2}}>
                  <IPY.Header
                      title="Statistik Transaksi Berdasarkan Status"
                  >
+
                    <Autocomplete
                      disablePortal
                      id="combo-box-demo"

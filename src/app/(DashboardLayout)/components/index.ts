@@ -15,6 +15,7 @@ import HeaderMenu from "@/app/(DashboardLayout)/components/shared/header-menu/he
 import Header from "@/app/(DashboardLayout)/components/shared/header/header";
 import MonthlySummary from "@/app/(DashboardLayout)/components/dashboard/MonthlySummary";
 import Button from "@/app/(DashboardLayout)/components/shared/button/button";
+import DailySummary from "@/app/(DashboardLayout)/components/dashboard/DailySummary";
 
 const IPY ={
     PageContainer,
@@ -31,6 +32,7 @@ const IPY ={
     HeaderMenu,
     Header,
     MonthlySummary,
+    DailySummary,
     Button
 }
 export default IPY;

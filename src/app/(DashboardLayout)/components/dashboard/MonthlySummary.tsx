@@ -1,10 +1,15 @@
+/**
+ * @author I Wayan Bayu Nugroho
+ * @email bayuiwo@gmail.com
+ * @create date 2023-05-09 23:12:33
+ * @modify date 2023-05-09 23:12:33
+ */
 
 import React from "react";
 import dynamic from "next/dynamic";
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import { useTheme } from '@mui/material/styles';
 import { Stack, Typography, Avatar, Fab, Grid, Box } from '@mui/material';
-import { IconArrowDownRight, IconCurrencyDollar, IconArrowUpRight } from '@tabler/icons-react';
+import { IconArrowUpRight } from '@tabler/icons-react';
 import { colors } from "@/asset";
 import {isEmpty} from "lodash";
 
@@ -21,50 +26,7 @@ interface IMonthlySummary {
 const MonthlySummary = (props: IMonthlySummary)  => {
   // chart color
   const theme = useTheme();
-  const secondary = theme.palette.success.main;
-  // const secondary = theme.palette.secondary.main;
-  const secondarylight = colors.text.primary;
-  const errorlight = '#fdede8';
   const {title, percentage,amount, trx, backgroundColor} = props
-
-  // chart
-  const optionscolumnchart: any = {
-    chart: {
-      type: 'area',
-      fontFamily: "'Plus Jakarta Sans', sans-serif;",
-      foreColor: '#adb0bb',
-      toolbar: {
-        show: false,
-      },
-      height: 60,
-      sparkline: {
-        enabled: true,
-      },
-      group: 'sparklines',
-    },
-    stroke: {
-      curve: 'smooth',
-      width: 2,
-    },
-    fill: {
-      //colors: [secondarylight],
-      type: 'solid',
-      opacity: 0,
-    },
-    markers: {
-      size: 0,
-    },
-    tooltip: {
-      theme: theme.palette.mode === 'dark' ? 'dark' : 'light',
-    },
-  };
-  const seriescolumnchart: any = [
-    {
-      name: '',
-      color: secondary,
-      data: [25, 66, 20, 40, 12, 58, 20],
-    },
-  ];
 
   return (
     <IPY.DashboardCard
