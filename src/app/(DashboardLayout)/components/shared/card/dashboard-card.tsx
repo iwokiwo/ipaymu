@@ -13,7 +13,7 @@ import { colors } from "@/asset";
 import {isEmpty} from "lodash";
 
 type Props = {
-  title?: string;
+  title?: any;
   subtitle?: string;
   action?: JSX.Element | any;
   footer?: JSX.Element;

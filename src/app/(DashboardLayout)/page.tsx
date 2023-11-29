@@ -54,7 +54,7 @@ const Dashboard = () => {
               <Box sx={{pt : 2, pb: 2}}>
                 <Box sx={{mb: 2}}>
                 <IPY.Header
-                  title={t('dashboard.dashboard')}
+                  title={t('dashboard.title')}
                 />
                 </Box>
                 <Grid item xs={12} lg={12}>

@@ -16,7 +16,7 @@ import {isEmpty} from "lodash";
 import IPY from '@/app/(DashboardLayout)/components/index'
 
 interface IMonthlySummary {
-    title: string,
+    title: any,
     amount: string,
     percentage? : string
     trx?: string

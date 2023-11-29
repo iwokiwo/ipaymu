@@ -15,7 +15,7 @@ type Props = {
     size?: 	'small' | 'medium' | 'large'
     onClick?: () => void
     other? : Pick<any, any>
-    className? : ClassNameMap<string>
+    className? : any
 };
 
 const Button = (

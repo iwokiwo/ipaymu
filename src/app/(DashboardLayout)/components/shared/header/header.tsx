@@ -11,7 +11,7 @@ import React from "react";
 import {Add, DeleteOutline, FormatListBulleted, Notifications} from "@mui/icons-material";
 
 type Props = {
-    title?: string;
+    title?: any;
     menu?: boolean;
     children?: JSX.Element | JSX.Element[];
 };

@@ -17,7 +17,7 @@
     "error": "Gagal"
   },
   "dashboard": {
-    "dashboard": "Dashboard",
+    "title": "Dashboard",
     "statisticsTransactionByStatus": "Statistik Transaksi Berdasarkan Status",
     "transactionSuccess": "Transaksi Sukses",
     "transactionPanding": "Transaksi Panding",

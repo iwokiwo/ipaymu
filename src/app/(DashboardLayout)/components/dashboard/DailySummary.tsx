@@ -11,7 +11,7 @@ import {Grid, Stack, Typography, Avatar, IconButton} from '@mui/material';
 import IPY from '@/app/(DashboardLayout)/components/index'
 
 interface IDailySummary {
-  title?: string,
+  title?: any,
   amount?: string,
   trx?: string
   backgroundColor?: string
