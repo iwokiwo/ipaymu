@@ -27,7 +27,6 @@ import { IconSettings } from '@tabler/icons-react';
 
 
 const MenuItemIpaymu = [
-
     {
         id: uniqueId(),
         title: 'Dashboard',
@@ -36,8 +35,74 @@ const MenuItemIpaymu = [
     },
     {
         id: uniqueId(),
-        title: 'Member',
+        title: 'Transaksi',
         icon: IconList,
+        type:"group",
+        children: [
+            {
+                id: uniqueId(),
+                title: 'Sample',
+                icon: IconLayoutDashboard,
+                href: '/sample-page',
+            },
+
+            {
+                id: uniqueId(),
+                title: 'order.orderList',
+                icon: IconLayoutDashboard,
+                href: '/order-list',
+            },
+
+        ]
+    },
+    {
+        id: uniqueId(),
+        title: 'Member',
+        icon: IconUserStar,
+        type:"group",
+        children: [
+            {
+                id: uniqueId(),
+                title: 'order.schedule',
+                icon: IconLayoutDashboard,
+                href: '/schedule',
+            },
+
+            {
+                id: uniqueId(),
+                title: 'order.orderList',
+                icon: IconLayoutDashboard,
+                href: '/order-list',
+            },
+
+        ]
+    },
+    {
+        id: uniqueId(),
+        title: 'Setting',
+        icon: IconSettings,
+        type:"group",
+        children: [
+            {
+                id: uniqueId(),
+                title: 'order.schedule',
+                icon: IconLayoutDashboard,
+                href: '/schedule',
+            },
+
+            {
+                id: uniqueId(),
+                title: 'order.orderList',
+                icon: IconLayoutDashboard,
+                href: '/order-list',
+            },
+
+        ]
+    },
+    {
+        id: uniqueId(),
+        title: 'User',
+        icon: IconUserCheck,
         type:"group",
         children: [
             {
