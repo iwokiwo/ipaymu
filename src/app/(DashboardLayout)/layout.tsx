@@ -53,7 +53,7 @@ export default function RootLayout({
   const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
     React.useEffect(() => {
-        i18n.changeLanguage("en")
+        i18n.changeLanguage("id")
     }, [])
 
     React.useEffect(() => {

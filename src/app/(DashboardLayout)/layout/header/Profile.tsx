@@ -47,7 +47,7 @@ const Profile = () => {
         onClick={handleClick2}
       >
         <Avatar
-          src="/images/profile/user-1.jpg"
+          src="/images/logos/ipaymu.png"
           alt="image"
           sx={{
             width: 35,

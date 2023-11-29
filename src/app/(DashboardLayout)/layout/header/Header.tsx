@@ -48,18 +48,24 @@ const Header = ({toggleMobileSidebar}: ItemType) => {
         </IconButton>
 
 
-        <IconButton
-          size="large"
-          aria-label="show 11 new notifications"
-          color="inherit"
-          aria-controls="msgs-menu"
-          aria-haspopup="true"
-        >
-          <Badge variant="dot" color="primary">
-            <IconBellRinging size="21" stroke="1.5" />
-          </Badge>
+        {/*<IconButton*/}
+        {/*  size="large"*/}
+        {/*  aria-label="show 11 new notifications"*/}
+        {/*  color="inherit"*/}
+        {/*  aria-controls="msgs-menu"*/}
+        {/*  aria-haspopup="true"*/}
+        {/*>*/}
+        {/*  <Badge variant="dot" color="primary">*/}
+        {/*    <IconBellRinging size="21" stroke="1.5" />*/}
+        {/*  </Badge>*/}
 
-        </IconButton>
+        {/*</IconButton>*/}
+        <Button variant="contained" disableElevation color="primary"  target="_blank" href="">
+          tes
+        </Button>
+        <Button variant="contained" disableElevation color="primary"  target="_blank" href="">
+          tes
+        </Button>
         <Box flexGrow={1} />
         <Stack spacing={1} direction="row" alignItems="center">
           <Button variant="contained" disableElevation color="primary"  target="_blank" href="">

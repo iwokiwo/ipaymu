@@ -11,11 +11,12 @@ import React from "react";
 import {Add, DeleteOutline, FormatListBulleted, Notifications} from "@mui/icons-material";
 
 type Props = {
-    title?: string;
+    title?: any;
     menu?: boolean;
+    children?: JSX.Element | JSX.Element[];
 };
 
-const Header = ({title, menu =false }: Props) => {
+const Header = ({title, menu =false, children }: Props) => {
     const theme = useTheme();
 
     return (
@@ -23,44 +24,48 @@ const Header = ({title, menu =false }: Props) => {
         <Grid item xs={12} sm={6} md={6}>
             <Stack spacing={2} direction="row" sx={{mb: 0}}>
                 <Typography
-                    variant="h1"
-                    sx={{
-                        background: "linear-gradient(45deg, #ffffff , #C83333 90%)",
-                        backgroundClip: "text",
-                        WebkitBackgroundClip: "text",
-                        color: "transparent",
-                        mt: 1
-
-                    }}
+                    variant="h4"
+                    // sx={{
+                    //     background: "linear-gradient(45deg, #ffffff , #C83333 90%)",
+                    //     backgroundClip: "text",
+                    //     WebkitBackgroundClip: "text",
+                    //     color: "transparent",
+                    //     mt: 1
+                    //
+                    // }}
                 >
                     {title}
                 </Typography>
             </Stack>
         </Grid>
-        <Grid item xs={12} sm={6} md={6} sx={{mb: 2}}>
+        <Grid item xs={12} sm={6} md={6} sx={{mb: menu ? 2 : 0}}>
+                {menu ?
+                  <>
+                      <Stack spacing={2} direction="row" sx={{justifyContent: 'flex-end', p: 1.5, mb: 0}}>
+                        <IconButton aria-label="delete" size="medium" sx={{colors: theme.palette.text.secondary}}
+                                    onClick={() => {
 
+                                    }}>
+                            <FormatListBulleted fontSize="medium" />
+                        </IconButton>
+                        <IconButton aria-label="delete" size="medium" sx={{colors: theme.palette.text.secondary}}
+                                    onClick={() => {
 
-                {menu &&
-                    <Stack spacing={2} direction="row" sx={{justifyContent: 'flex-end', p: 1.5, mb: 0}}>
-                    <IconButton aria-label="delete" size="medium" sx={{colors: theme.palette.text.secondary}}
-                                onClick={() => {
+                                    }}>
+                            <Notifications fontSize="medium" />
+                        </IconButton>
+                        <IconButton aria-label="delete" size="medium" sx={{colors: theme.palette.text.secondary}}
+                                    onClick={() => {
 
-                                }}>
-                        <FormatListBulleted fontSize="medium" />
-                    </IconButton>
-                    <IconButton aria-label="delete" size="medium" sx={{colors: theme.palette.text.secondary}}
-                                onClick={() => {
-
-                                }}>
-                        <Notifications fontSize="medium" />
-                    </IconButton>
-                    <IconButton aria-label="delete" size="medium" sx={{colors: theme.palette.text.secondary}}
-                                onClick={() => {
-
-                                }}>
-                        <Add fontSize="medium" />
-                    </IconButton>
-                </Stack>
+                                    }}>
+                            <Add fontSize="medium" />
+                        </IconButton>
+                    </Stack>
+                  </>
+                  :
+                  <Stack spacing={2} direction="row" sx={{justifyContent: 'flex-end', mb: 0}}>
+                      {children}
+                  </Stack>
                 }
 
 
