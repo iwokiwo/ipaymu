@@ -22,12 +22,12 @@ const SidebarItems = ({ toggleMobileSidebar }: any) => {
       <List sx={{ pt: 3 }} className="sidebarNav" component="div">
         {MenuItemIpaymu.map((item) => {
           // {/********SubHeader**********/}
-          // if (item.subheader) {
-          //   return <NavGroup item={item} key={item.subheader} />;
+          if (item.subheader) {
+            return <NavGroup item={item} key={item.subheader} />;
 
-          //   // {/********If Sub Menu**********/}
-          //   /* eslint no-else-return: "off" */
-          // } else {
+            // {/********If Sub Menu**********/}
+            //  eslint no-else-return: "off"
+          } else {
             return (
               <NavItem
                 item={item}
@@ -36,7 +36,7 @@ const SidebarItems = ({ toggleMobileSidebar }: any) => {
                 onClick={toggleMobileSidebar}
               />
             );
-          // }
+          }
         }
         )}
       </List>
