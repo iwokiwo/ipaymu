@@ -35,11 +35,13 @@ import Header from "@/app/(DashboardLayout)/layout/header/Header";
 
 
 import { colors } from "@/asset";
+import {useTranslation} from "react-i18next";
 
 
 const Dashboard = () => {
     const matches = useMediaQuery('(min-width:600px)');
     const classes = useStyles()
+    const { t } = useTranslation()
 
   const top100Films = [
     { label: 'The Shawshank Redemption', year: 1994 },
@@ -52,30 +54,30 @@ const Dashboard = () => {
               <Box sx={{pt : 2, pb: 2}}>
                 <Box sx={{mb: 2}}>
                 <IPY.Header
-                  title="Dashboard"
+                  title={t('dashboard.dashboard')}
                 />
                 </Box>
                 <Grid item xs={12} lg={12}>
                   <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12}}>
                     <Grid item xs={4}>
                       <IPY.DailySummary
-                        title="Transaksi Hari Ini"
+                        title={t('dashboard.transactionToday')}
                         amount="Rp. 1.000.000.000"
-                        trx="1000 Transaksi"
+                        trx={`1.000 ${t('dashboard.transaction')}`}
                         icon={<SignalCellularAltIcon sx={{ fontSize: 70 }}/>} />
                     </Grid>
                     <Grid item xs={4}>
                       <IPY.DailySummary
-                        title="GTV Hari Ini"
+                        title={t('dashboard.gtvToday')}
                         amount="Rp. 1.000.000.000"
-                        trx="1000 Transaksi"
+                        trx={`1.000 ${t('dashboard.transaction')}`}
                         icon={<ShoppingCartIcon  sx={{ fontSize: 70 }}/>} />
                     </Grid>
                     <Grid item xs={4}>
                       <IPY.DailySummary
-                        title="Top Channel Pembayaran"
+                        title={t('dashboard.topChannelPayment')}
                         amount="Split Payment"
-                        trx="1000 Transaksi"
+                        trx={`1.000 ${t('dashboard.transaction')}`}
                         icon={<PieChartIcon  sx={{ fontSize: 70 }}  /> } />
                     </Grid>
 
@@ -86,7 +88,7 @@ const Dashboard = () => {
 
               <Box sx={{pt : 2, pb: 2}}>
                  <IPY.Header
-                     title="Statistik Transaksi Berdasarkan Status"
+                     title={t('dashboard.statisticsTransactionByStatus')}
                  >
 
                    <Autocomplete
@@ -107,16 +109,16 @@ const Dashboard = () => {
                 <Grid item xs={12} lg={12}>
                     <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                         <Grid item xs={4} sm={4} md={3} >
-                            <IPY.MonthlySummary title="Transaksi Sukses" amount="Rp 10.000" trx="1000 Transaksi" backgroundColor={colors.success.primary} />
+                            <IPY.MonthlySummary title={t('dashboard.transactionSuccess')} amount="Rp 10.000" trx={`1.000 ${t('dashboard.transaction')}`} backgroundColor={colors.success.primary} />
                         </Grid>
                         <Grid item xs={4} sm={4} md={3} >
-                            <IPY.MonthlySummary title="Transaksi Panding" amount="Rp 60.000" trx="200 Trx" backgroundColor={colors.secondary.main}/>
+                            <IPY.MonthlySummary title={t('dashboard.transactionPanding')} amount="Rp 60.000" trx={`1.000 ${t('dashboard.transaction')}`} backgroundColor={colors.secondary.main}/>
                         </Grid>
                         <Grid item xs={4} sm={4} md={3} >
-                            <IPY.MonthlySummary title="Transaksi Gagal" amount="Rp 90.000" trx="4000 Trx" backgroundColor={colors.error.primary}/>
+                            <IPY.MonthlySummary title={t('dashboard.transactionFailed')} amount="Rp 90.000" trx={`1.000 ${t('dashboard.transaction')}`} backgroundColor={colors.error.primary}/>
                         </Grid>
                         <Grid item xs={4} sm={4} md={3} >
-                            <IPY.MonthlySummary title="Transaksi Unsettled" amount="Rp 20.000" trx="8000 Trx" backgroundColor={colors.info.primary}/>
+                            <IPY.MonthlySummary title={t('dashboard.transactionUnsettled')} amount="Rp 20.000" trx={`1.000 ${t('dashboard.transaction')}`} backgroundColor={colors.info.primary}/>
                         </Grid>
                     </Grid>
 

@@ -16,6 +16,18 @@
     "success": "Berhasil",
     "error": "Gagal"
   },
+  "dashboard": {
+    "dashboard": "Dashboard",
+    "statisticsTransactionByStatus": "Statistik Transaksi Berdasarkan Status",
+    "transactionSuccess": "Transaksi Sukses",
+    "transactionPanding": "Transaksi Panding",
+    "transactionFailed": "Transaksi Gagal",
+    "transactionUnsettled": "Transaksi Unsettled",
+    "transactionToday": "Transaksi Hari Ini",
+    "gtvToday": "GTV Hari Ini",
+    "topChannelPayment": "Top Channel Pembayaran",
+    "transaction": "Transaksi"
+  },
   "purchase": {
     "purchase": "Purchase",
     "requestPurchase": "Request Purchase",
