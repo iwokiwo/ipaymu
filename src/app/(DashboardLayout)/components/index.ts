@@ -1,6 +1,6 @@
+import dynamic from 'next/dynamic'
+
 import PageContainer from "./container/PageContainer";
-
-
 import DashboardCard from "./shared/card/dashboard-card";
 import {CardHeader} from "./shared/card/chard-header";
 import BlankCard from "./shared/card/blank-card";
@@ -12,10 +12,11 @@ import Notif from "./shared/notif/Notif";
 import {TableItem} from "./shared/table/table-item";
 import Pagination from "@/app/(DashboardLayout)/components/shared/pagination/pagination";
 import HeaderMenu from "@/app/(DashboardLayout)/components/shared/header-menu/header-menu";
-import Header from "@/app/(DashboardLayout)/components/shared/header/header";
-import MonthlySummary from "@/app/(DashboardLayout)/components/dashboard/MonthlySummary";
+const Header = dynamic(() => import("@/app/(DashboardLayout)/components/shared/header/header"), { ssr: false })
+// import MonthlySummary from "@/app/(DashboardLayout)/components/dashboard/MonthlySummary";
+const MonthlySummary = dynamic(() => import("@/app/(DashboardLayout)/components/dashboard/MonthlySummary"), { ssr: false })
 import Button from "@/app/(DashboardLayout)/components/shared/button/button";
-import DailySummary from "@/app/(DashboardLayout)/components/dashboard/DailySummary";
+const DailySummary = dynamic(() => import("@/app/(DashboardLayout)/components/dashboard/DailySummary"), { ssr: false })
 
 const IPY ={
     PageContainer,
