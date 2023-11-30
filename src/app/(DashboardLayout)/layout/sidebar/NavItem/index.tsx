@@ -19,9 +19,10 @@ import {
 
 import Link from "next/link";
 import {ExpandLess, ExpandMore} from "@mui/icons-material";
-import { IconPoint } from "@tabler/icons-react";
+import { IconPoint,IconCircleDotted } from "@tabler/icons-react";
 import {useTranslation} from "react-i18next";
 import {colors} from "@/asset";
+import { isEmpty } from "lodash";
 
 type NavGroup = {
   [x: string]: any;
@@ -68,12 +69,13 @@ const NavItem = ({ item, level, pathDirect, onClick }: ItemType) => {
   const handleClick = () => {
     setOpen(!open);
   };
-
+  console.log("item.children",item.children)
   const renderIcon = ({data}:any) => {
     console.log("data",data)
-    // const Icon = data;
-    // const itemIcon = <Icon stroke={1.5} size="1.3rem" />;
-    return data
+    const Icon = data;
+    console.log("Icon",Icon)
+    const itemIcon = <Icon stroke={1.5} size="1.3rem" />;
+    return itemIcon
   };
 
   // const ListItemStyled = styled(ListItem)(() => ({
@@ -181,7 +183,7 @@ const NavItem = ({ item, level, pathDirect, onClick }: ItemType) => {
                                 color: "inherit",
                               }}
                           >
-                            {/* {renderIcon(data)} */}
+                            {/* {isEmpty(data.icon) ? <IconPoint /> : renderIcon(data.icon)} */}
                             <IconPoint />
 
                           </ListItemIcon>
