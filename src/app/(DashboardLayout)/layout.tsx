@@ -19,6 +19,7 @@ import {Loading} from "../../app/(DashboardLayout)/components/shared/loading/loa
 import i18n from '../../i18n/i18n';
 import {load} from "@/domain/helpers/storage";
 import {isEmpty} from "lodash";
+import { colors } from "@/asset";
 
 
 
@@ -34,7 +35,7 @@ const PageWrapper = styled("div")(() => ({
   paddingBottom: "60px",
   flexDirection: "column",
   zIndex: 1,
-  backgroundColor: "transparent",
+  backgroundColor: colors.cultured,
 }));
 
 interface Props {
