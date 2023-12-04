@@ -1,5 +1,5 @@
 export interface NotifProps {
     open: boolean;
-    type?: string;
+    type?: "success" | "error";
     message?: string;
   }

@@ -4,14 +4,14 @@ import {devtools} from "zustand/middleware";
 
 interface NotifState {
   notif: NotifProps;
-  setNotif: (open: boolean, type: string, message: string) => void;
+  setNotif: (open: boolean, type: "success" | "error", message: string) => void;
 
 }
 
 export const NotifStore = create<NotifState>()(
     devtools((set) => ({
   notif: {open: false, type:"success",message:""},
-  setNotif: (open: boolean, type: string, message: string) => {
+  setNotif: (open: boolean, type: "success" | "error", message: string) => {
     set(() => ({
     notif:
         {

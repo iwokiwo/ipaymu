@@ -6,16 +6,21 @@
  */
 
 import { Alert, AlertTitle, Card, Snackbar, Typography } from "@mui/material";
-import { NotifStore } from "../../../../../store/notif/notifStore";
+import { Theme } from "@mui/material";
+import { createStyles, makeStyles } from "@mui/styles";
+import { NotifStore } from "@/store/notif/notifStore";
 import {useTranslation} from "react-i18next";
+import { useStyles } from "./notif-dialog.styles";
 
 
 type Props = {
   className?: JSX.Element | JSX.Element[];
 };
 
+
 const Notif = () => {
     const { t } = useTranslation()
+    const classes = useStyles();
 
     const {notif, setNotif} = NotifStore()
 
@@ -26,14 +31,16 @@ const Notif = () => {
     <Snackbar
       key={new Date().getTime()}
       open={notif.open}
-      autoHideDuration={2500}
+      autoHideDuration={2800}
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       onClose={handleClose}
+      sx={{ width: '100%' }}
     >
       <Alert
         variant="filled"
         severity={notif.type === "success" ?  'success':'error'  }
         onClose={handleClose}
+        className={classes.myAlert}
       >
         <AlertTitle>{notif.type === "success" ?  t(`common.success`):t(`common.error`)  }</AlertTitle>
        <Typography> {notif.message}</Typography>
