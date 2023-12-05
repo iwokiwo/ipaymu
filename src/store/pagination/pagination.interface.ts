@@ -10,7 +10,7 @@ export interface PaginationInterface {
     paginationStore : {
         limit?: number,
         page?: number,
-        //sort?: string,
+        sort?: string,
         search?:string,
         // total_rows?: number,
         // total_pages?: number

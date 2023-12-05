@@ -14,7 +14,7 @@ export const PaginationStore = create<PaginationInterface>()(
         paginationStore:{
             // limit: 10,
             // page: 1,
-            // sort:'id desc',
+            sort:'id desc',
             // search:'',
             // total_pages: 1,
             // total_rows: 6
