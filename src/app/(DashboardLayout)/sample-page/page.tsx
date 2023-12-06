@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Typography } from '@mui/material';
+import {TextField, Typography} from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
@@ -230,7 +230,17 @@ const SamplePage = () => {
 
           <Box sx={{ width: '100%' }}>
 
-        <IPY.TableToolbar numSelected={selected.length} />
+            <IPY.TableToolbar
+                numSelected={selected.length}
+                onSearch={()=> alert("tes")}
+            >
+              <TextField id="standard-basic" label="Standard" variant="standard" />
+              <TextField id="standard-basic" label="Standard" variant="standard" />
+              <TextField id="standard-basic" label="Standard" variant="standard" />
+              <TextField id="standard-basic" label="Standard" variant="standard" />
+              <TextField id="standard-basic" label="Standard" variant="standard" />
+
+            </IPY.TableToolbar>
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
