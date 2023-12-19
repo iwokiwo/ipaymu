@@ -25,6 +25,7 @@ import { visuallyHidden } from '@mui/utils';
 import IPY from '../components';
 
 import  {NotifStore } from "@/store/notif/notifStore";
+import {TransactionStores} from "@/store/transaction/transaction"
 
 
 interface Data {
@@ -153,6 +154,7 @@ const SamplePage = () => {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const {setDataParams, dataParam,getDataPagination} = TransactionStores()
 
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,
@@ -224,9 +226,18 @@ const SamplePage = () => {
       <IPY.DashboardCard title="Sample Page">
         <>
           <Typography>This is a sample page</Typography>
-          <IPY.Button size="large" text="submit" variant="contained" onClick={()=> setNotif(true,"success","Transaksi disimpan")}/>
+          <IPY.Button size="large" text="set" variant="contained" 
+            onClick={()=> {
+              setDataParams("type","k")
+        
+              }}/>
 
-
+          <IPY.Button size="large" text="submit" variant="contained" 
+            onClick={()=> {
+        
+              setNotif(true,"success",dataParam.type!)
+     
+              }}/>
 
           <Box sx={{ width: '100%' }}>
 

@@ -49,3 +49,7 @@ export let urlUsers ='api/users'
 export let urlStoreUsers='api/users'
 export let urlUpdateUsers='api/users/'
 export let urlDeleteUsers='api/users/'
+
+
+//-----------------------Transaction------------------------
+export let urlTransaction ='api/v3/transactions'
