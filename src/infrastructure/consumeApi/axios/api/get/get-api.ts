@@ -6,13 +6,18 @@
  */
 
 import axios from "axios";
-import {GetConfig} from "../config/get/get-config";
-
+import {baseUrl} from "@/infrastructure/consumeApi/axios/api/url";
 
 export const GetApi = async (url: string, data: any): Promise<any> =>{
     return await axios({
-        ...GetConfig,
-        url: `${GetConfig.baseUrl}/${url}`,
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            //'Authorization': `Bearer ${localStorage.getItem("token")}`
+        },
+        method: 'get',
+        url: `${baseUrl}${url}`,
+        params: data
     }).then ( (response) => {
         return response
     }).catch((error) =>{

@@ -26,6 +26,7 @@ import IPY from '../components';
 
 import  {NotifStore } from "@/store/notif/notifStore";
 import {TransactionStores} from "@/store/transaction/transaction"
+import {PaginationStore} from "@/store/pagination/pagination";
 
 
 interface Data {
@@ -155,6 +156,7 @@ const SamplePage = () => {
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const {setDataParams, dataParam,getDataPagination} = TransactionStores()
+  const {paginationStore, setDataPagination} = PaginationStore()
 
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,
@@ -220,6 +222,24 @@ const SamplePage = () => {
       ),
     [order, orderBy, page, rowsPerPage],
   );
+
+  React.useEffect(()=>{
+    (async () => {
+        try {
+            //   setLoading(true)
+            await getDataPagination({
+              type: 'MUTATION',
+              succeed_date_start: '2022-11-25',
+              succeed_date_end: '2022-12-25',
+              limit: '10',
+              page:'1'
+            })
+        } finally {
+            //  setLoading(false)
+        }
+    })()
+
+},[paginationStore])
 
   return (
     <IPY.PageContainer title="Sample Page" description="this is Sample page">
