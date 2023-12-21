@@ -15,7 +15,6 @@ export class TransactionRepository implements TransactionInterface {
     async fetch(data: any) {
         try {
             const datas = await GetApi(urlTransaction, data)
-            console.log("datas",datas)
             return  await datas.data.data
         } catch {
             return null;

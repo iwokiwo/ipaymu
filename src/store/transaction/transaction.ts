@@ -34,7 +34,6 @@ export const TransactionStores = create<TransactionInterface>()(
 
         getDataPagination: async (data) => {
             const response = await TransactionObj.fetch(data)
-
             set({ data: response.result})
             set({totalRows: response.pagination.total_rows})
         },

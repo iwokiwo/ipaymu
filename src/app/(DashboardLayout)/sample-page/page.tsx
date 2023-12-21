@@ -155,7 +155,7 @@ const SamplePage = () => {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const {setDataParams, dataParam,getDataPagination} = TransactionStores()
+  const {setDataParams, dataParam,getDataPagination, data} = TransactionStores()
   const {paginationStore, setDataPagination} = PaginationStore()
 
   const handleRequestSort = (
@@ -240,7 +240,7 @@ const SamplePage = () => {
     })()
 
 },[paginationStore])
-
+console.log("data",data)
   return (
     <IPY.PageContainer title="Sample Page" description="this is Sample page">
       <IPY.DashboardCard title="Sample Page">
