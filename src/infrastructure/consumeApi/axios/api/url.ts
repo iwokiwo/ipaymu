@@ -6,7 +6,7 @@
  */
 
 
-export let baseUrl='https://api-ms-clinic.aksaratech.com/'
+export let baseUrl='http://127.0.0.1:8787/'
 
 //---------------------url Auth------------------------------
 export let urlLogin ='api/login'
@@ -49,3 +49,7 @@ export let urlUsers ='api/users'
 export let urlStoreUsers='api/users'
 export let urlUpdateUsers='api/users/'
 export let urlDeleteUsers='api/users/'
+
+
+//-----------------------Transaction------------------------
+export let urlTransaction ='api/v3/transactions'

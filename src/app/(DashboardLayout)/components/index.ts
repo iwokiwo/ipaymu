@@ -18,6 +18,10 @@ const MonthlySummary = dynamic(() => import("@/app/(DashboardLayout)/components/
 import Button from "@/app/(DashboardLayout)/components/shared/button/button";
 const DailySummary = dynamic(() => import("@/app/(DashboardLayout)/components/dashboard/DailySummary"), { ssr: false })
 
+//------------table v2--------------//
+import TableHeader from "@/app/(DashboardLayout)/components/shared/table-v2/TableHeader"
+import TableToolbar from "@/app/(DashboardLayout)/components/shared/table-v2/TableToolbar"
+
 const IPY ={
     PageContainer,
     DashboardCard,
@@ -34,6 +38,8 @@ const IPY ={
     Header,
     MonthlySummary,
     DailySummary,
-    Button
+    Button,
+    TableHeader,
+    TableToolbar
 }
 export default IPY;
